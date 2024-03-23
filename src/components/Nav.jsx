@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [theme, setTheme] = useState("");
@@ -10,6 +11,7 @@ const Nav = () => {
     }
 
     const localTheme = localStorage.getItem("theme");
+
     setTheme(localTheme);
 
     document.querySelector("html").setAttribute("data-theme", localTheme);
@@ -18,33 +20,51 @@ const Nav = () => {
   const handleThemeChange = (e) => {
     if (e.target.checked) {
       setTheme("synthwave");
-    } else setTheme("light");
+    } else {
+      setTheme("light");
+    }
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
+    <div className="navbar bg-base-100 shadow-lg px-4  z-10">
       <div className="flex-1">
         <a className="btn btn-ghost font-bold text-2xl gap-0 text-secondary  normal-case">
           Byte <span className="text-primary">Blaze</span>
         </a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li className="font-bold">
-            <a>Home</a>
-          </li>
-          <li className="font-bold text-primary">
-            <a>Blogs</a>
-          </li>
-          <li className="font-bold">
-            <a>Bookmarks</a>
-          </li>
+        <ul className="menu hidden sm:flex menu-horizontal px-1 gap-5">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/blogs"
+          >
+            Blogs
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "font-bold"
+            }
+            to="/bookmarks"
+          >
+            Bookmarks
+          </NavLink>
         </ul>
         <label className="cursor-pointer grid place-items-center">
           <input
             type="checkbox"
             onChange={handleThemeChange}
-            checked={theme == "light" ? false : true}
+            checked={theme == "synthwave" ? true : false}
             className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
           />
           <svg

@@ -1,7 +1,6 @@
+import { Outlet } from "react-router-dom";
 import Nav from "./components/Nav";
-import Blogs from "./pages/Blogs";
-import Bookmarks from "./pages/Bookmarks";
-import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -9,9 +8,10 @@ function App() {
       <div className="h-16">
         <Nav></Nav>
       </div>
-      <Home></Home>
-      <Blogs></Blogs>
-      <Bookmarks></Bookmarks>
+      <div className="min-h-[calc(100vh-116px)]">
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
     </>
   );
 }
