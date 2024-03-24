@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <div className="h-16">
+      <div className="h-16 ">
         <Nav></Nav>
       </div>
       <div className="min-h-[calc(100vh-116px)]">
