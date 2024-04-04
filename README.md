@@ -1,8 +1,16 @@
-# React + Vite
+# ByteBlaze
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Resources
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [Tailwindcss Buttons](https://tailwindcss.com/docs/buttons)
+- [Mamba UI - Components](https://mambaui.com/)
+- [Animated Gradient Text](https://www.npmjs.com/package/react-animated-gradient-text)
+- [Dev.to API Docs](https://docs.dev.to/api/)
+- [React-Hot-Toast](https://react-hot-toast.com/)
+- [React-Spinner](https://www.npmjs.com/package/react-spinners)
+- [React-Icons](https://react-icons.github.io/react-icons/)
+- [React-Markdown](https://github.com/remarkjs/react-markdown)
+- [ReHype-Raw](https://github.com/rehypejs/rehype-raw)
+- [Prop-Types](https://www.npmjs.com/package/prop-types)
+- [Daisy UI](https://daisyui.com/)

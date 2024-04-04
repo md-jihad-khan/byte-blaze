@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 import placeholderImg from "../assets/404.jpg";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-
 const Content = () => {
   const blog = useLoaderData();
   const { cover_image, title, tags, url, body_html } = blog;
@@ -10,7 +9,7 @@ const Content = () => {
   return (
     <div className="mx-auto transition border-2 p-2  border-opacity-30   group hover:no-underline focus:no-underline ">
       <img
-        className="object-contain w-full rounded h-44 "
+        className="object-cover w-full rounded h-44 "
         src={cover_image || placeholderImg}
       />
       <div>
@@ -36,6 +35,7 @@ const Content = () => {
         >
           {title}
         </a>
+
         <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
       </div>
     </div>

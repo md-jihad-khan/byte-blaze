@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { Link, Outlet, useLoaderData, useNavigation } from "react-router-dom";
-import Loader from "../components/Loader";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { MdBookmarkAdd } from "react-icons/md";
 import { saveBlogs } from "../utils";
-
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const navigation = useNavigation();
   const blog = useLoaderData();
   const {
     comments_count,
@@ -18,7 +15,7 @@ const Blog = () => {
   const handleBookmark = (blog) => {
     saveBlogs(blog);
   };
-  if (navigation.state === "loading") return <Loader></Loader>;
+
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12 overflow-hidden">
       <article className="space-y-8 ">
@@ -36,8 +33,7 @@ const Blog = () => {
               {comments_count} comments • {public_reactions_count} views
             </p>
           </div>
-          {/* tabs */}
-          <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden justify-start flex-nowrap ">
+          <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap ">
             <Link
               to={``}
               onClick={() => setTabIndex(0)}
@@ -81,7 +77,6 @@ const Blog = () => {
               </svg>
               <span>Author</span>
             </Link>
-
             <div
               onClick={() => handleBookmark(blog)}
               className="bg-primary p-3 ml-5 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden"
@@ -90,9 +85,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-        <div>
-          <Outlet></Outlet>
-        </div>
+        <Outlet />
       </article>
     </div>
   );
